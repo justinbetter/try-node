@@ -1,0 +1,14 @@
+extends layout
+
+append css
+      link(rel='stylesheet', href='/css/blog.css')
+
+
+block content
+  h1= title
+  p Welcome to #{title}
+  #alert.alert.alert-danger this is a error message
+
+
+block scripts  
+  script $(document).ready(function(){console.log('dom ready');});

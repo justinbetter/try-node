@@ -16,6 +16,12 @@ module.exports = function(app, config) {
   app.set('views', config.root + '/app/views');
   app.set('view engine', 'jade');
 
+  app.use(function (req, res, next) {
+    app.locals.urlname = req.path;
+    console.log(app.locals.urlname);
+    next();
+  });  
+
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
   app.use(logger('dev'));
   app.use(bodyParser.json());
@@ -38,6 +44,8 @@ module.exports = function(app, config) {
     next(err);
   });
   
+
+
   if(app.get('env') === 'development'){
     app.use(function (err, req, res, next) {
       res.status(err.status || 500);
