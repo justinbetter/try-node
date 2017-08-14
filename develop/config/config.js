@@ -9,10 +9,10 @@ var config = {
       name: 'develop'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/develop-development'
+    db: 'mongodb://localhost/nodeblog'
   },
 
-  test: {
+  test: { 
     root: rootPath,
     app: {
       name: 'develop'

@@ -8,11 +8,12 @@ module.exports = function (app) {
 };
 
 router.get('/', function (req, res, next) {
-  Post.find(function (err, Posts) {
+  Post.find().populate('author').populate('category').exec(function (err, posts) {
+    return res.json(posts)
     if (err) return next(err);
     res.render('blog/index', {
       title: 'Generator-Express MVC',
-      Posts: Posts
+      Posts: posts
     });
   });
 });
