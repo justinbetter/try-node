@@ -4,14 +4,22 @@ var express = require('express'),
   Post = mongoose.model('Post');
 
 module.exports = function (app) {
-  app.use('/posts', router);
+  app.use('/', router);
 };
 
 router.get('/', function (req, res, next) {
-  Post.find().populate('author').populate('category').exec(function (err, posts) {
-    if (err) return next(err);
+  res.redirect('/posts')
+});
+
+
+router.get('/about', function (req, res, next) {
     res.render('blog/index', {
-      Posts: posts
+      title: 'About me',
     });
-  });
+});
+
+router.get('/contact', function (req, res, next) {
+    res.render('blog/index', {
+      title: 'Contact me',
+    });
 });
