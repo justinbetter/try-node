@@ -139,16 +139,29 @@ h6, .h6 {
  * Blog posts
  */
 
-.blog-post {
-  margin-bottom: 60px;
+.post {
+  margin-bottom: 40px;
 }
-.blog-post-title {
-  margin-bottom: 5px;
-  font-size: 40px;
+.post-title {
+  border: 1px solid #EEEEEE;
+  border-width: 1px 0;
+  padding:  5px 0;
 }
-.blog-post-meta {
-  margin-bottom: 20px;
-  color: #999;
+.post-content {
+  margin-bottom: 10px;
+}
+.post-meta {
+  font-size: 10px;
+}
+.post-meta > span{
+  display: inline-block;
+  margin:0 5px;
+}
+.post-meta > span:first-of-type {
+  margin-left:  0px;
+}
+.post-meta > span:last-of-type {
+  margin-right:  0px;
 }
 
 
